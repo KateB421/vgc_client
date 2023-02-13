@@ -1,0 +1,8 @@
+.singleGame{
+    padding-left: 6px;
+}
+
+.gamePostCards{
+    display: flex;
+    flex-direction: column-reverse;
+}

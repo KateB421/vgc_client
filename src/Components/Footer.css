@@ -1,0 +1,33 @@
+.theFoot{
+    background-color: #343434;
+    color: white;
+    padding: 2px;
+}
+
+.theFoot p{
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.theFoot a{
+    text-decoration: none;
+    color: white;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.theFoot a:hover{
+    text-decoration: underline;
+}
+
+.theFoot a:visited{
+    text-decoration: none;
+    color: white;
+}
+
+.theFoot footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}

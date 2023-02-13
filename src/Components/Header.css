@@ -1,0 +1,29 @@
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    width: 100%;
+    background-color: #C3BCC7;
+    padding: 4px;
+    box-sizing: border-box;
+}
+
+header a{
+    font-size: 24px;
+    text-decoration: none;
+    margin-left: 4px;
+    margin-right: 4px;
+    color: black;
+    padding: 2px;
+    border-radius: 2px;
+    font-family: sans-serif;
+}
+
+header a:hover{
+    color: #343434;
+    text-decoration: underline;
+} 
+
+header a:visited{
+    text-decoration: none;
+}
