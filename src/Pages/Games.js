@@ -8,7 +8,7 @@ export default function GamesArea({userLoggedIn}){
     const [addAreaOpen, setAddAreaOpen]=useState(false);
 
     async function getAllGames(){
-        let res=await fetch('http://localhost:3005/api/games');
+        let res=await fetch(`${process.env.REACT_APP_SERVER_URL}/api/games`);
         res=await res.json();
         setGameList(res.results)
     }
@@ -16,7 +16,7 @@ export default function GamesArea({userLoggedIn}){
         setAddAreaOpen(!addAreaOpen);
     }
     async function addThisItem(item){
-        let res = await fetch('http://localhost:3005/api/games/add',{
+        let res = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/games/add`,{
             method:'POST',
             mode:'cors',
             headers: {

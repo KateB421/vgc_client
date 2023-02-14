@@ -89,7 +89,7 @@ export default function SignUp(){
         })
     }
     async function onSignup(item){
-        let res = await fetch('http://localhost:3005/api/users/add',{
+        let res = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/users/add`,{
             method:'POST',
             mode:'cors',
             headers: {

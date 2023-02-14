@@ -9,12 +9,12 @@ export default function Game({userLoggedIn, user}){
     const [areaPosts, setAreaPosts]=useState([]);
     let {id}=useParams();
     async function getGame(){
-        let res=await fetch(`http://localhost:3005/api/games/${id}`);
+        let res=await fetch(`${process.env.REACT_APP_SERVER_URL}/api/games/${id}`);
         res=await res.json();
         setAreaGame(res.results);
     }
     async function getGamePosts(){
-        let res=await fetch(`http://localhost:3005/api/posts/game/${id}`);
+        let res=await fetch(`${process.env.REACT_APP_SERVER_URL}/api/posts/game/${id}`);
         res=await res.json();
         setAreaPosts(res.results);
     }
@@ -27,7 +27,7 @@ export default function Game({userLoggedIn, user}){
             gameIn:areaGame.id,
             private:1
         }
-        let res=await fetch('http://localhost:3005/api/posts/add',{
+        let res=await fetch(`${process.env.REACT_APP_SERVER_URL}/api/posts/add`,{
             method:'POST',
             mode:'cors',
             headers: {

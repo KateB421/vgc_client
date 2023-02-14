@@ -9,7 +9,7 @@ export default function App(){
     const [userLoggedIn, setUserLoggedIn]=useState(false);
     const [user, setUser]=useState('');
     async function onLogin(info){
-        let res = await fetch('http://localhost:3005/api/verification',{
+        let res = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/verification`,{
             method:'POST',
             mode:'cors',
             headers: {

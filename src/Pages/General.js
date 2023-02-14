@@ -7,14 +7,14 @@ export default function General({user, userLoggedIn}){
     const [areaGame, setAreaGame]=useState({});
     const [areaPosts, setAreaPosts]=useState([]);
     async function getGeneral(){
-        let res=await fetch('http://localhost:3005/api/games/1');
+        let res=await fetch(`${process.env.REACT_APP_SERVER_URL}/api/games/1`);
         res=await res.json();
         // console.log(res);
         setAreaGame(res.results);
         // console.log(areaGame);
     }
     async function getGeneralPosts(){
-        let res=await fetch('http://localhost:3005/api/posts/game/1');
+        let res=await fetch(`${process.env.REACT_APP_SERVER_URL}/api/posts/game/1`);
         res=await res.json();
         console.log(res)
         setAreaPosts(res.results);
@@ -28,7 +28,7 @@ export default function General({user, userLoggedIn}){
             gameIn:areaGame.id,
             private:1
         }
-        let res=await fetch('http://localhost:3005/api/posts/add',{
+        let res=await fetch(`${process.env.REACT_APP_SERVER_URL}/api/posts/add`,{
             method:'POST',
             mode:'cors',
             headers: {
