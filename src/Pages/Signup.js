@@ -1,3 +1,4 @@
+//This is the area for creating an account
 import { Link } from "react-router-dom";
 import { useReducer } from "react";
 import './Signup.css';
@@ -89,6 +90,7 @@ export default function SignUp(){
         })
     }
     async function onSignup(item){
+        //Need to add input validatation
         let res = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/users/add`,{
             method:'POST',
             mode:'cors',
@@ -112,8 +114,10 @@ export default function SignUp(){
             <form autoComplete="off" onSubmit={onFormSubmit}>
                 <label htmlFor='newUsername'>Username*</label>
                 <input value={state.username} id="newUsername" type={'text'} onChange={onUsernameChange}/>
+                {/* Need to check for password requirements */}
                 <label htmlFor='createPassword'>Password*</label>
                 <input value={state.password} onChange={onPasswordChange} id="createPassword" type={'password'}/>
+                {/* Need to check for email requirements */}
                 <label htmlFor='signUpEmail'>Email*</label>
                 <input value={state.email} onChange={onEmailChange} id="signUpEmail" type={'email'}/>
                 <label htmlFor='signUpBio'>Bio</label>

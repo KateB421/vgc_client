@@ -1,3 +1,4 @@
+//Component for creating the card for each post.
 import { useEffect, useState } from "react";
 import './Postcard.css'
 

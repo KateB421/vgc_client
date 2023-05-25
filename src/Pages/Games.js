@@ -1,3 +1,4 @@
+//Area for list of games page.
 import { useEffect, useState } from "react"
 import Addgamearea from "../Components/Addgamearea";
 import Gamecard from "../Components/Gamecard";

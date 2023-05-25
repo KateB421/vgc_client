@@ -1,3 +1,4 @@
+//This is the page for all the public posts related to a specific game.
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import CreatePost from "../Components/Createpost";
@@ -45,6 +46,7 @@ export default function Game({userLoggedIn, user}){
     useEffect(function(){
         getGamePosts();
     },[])
+    //If there is a user logged in, then they are able to see the area to make a post. Otherwise, it's not visable.
     let createPostArea;
     if(userLoggedIn){
         createPostArea=<CreatePost user={user} areaGame={areaGame} onNewPost={onNewPost}/>

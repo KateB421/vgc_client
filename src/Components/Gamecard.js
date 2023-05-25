@@ -1,3 +1,4 @@
+//Component for creating card for each game.
 import { Link } from "react-router-dom";
 import './Gamecard.css'
 

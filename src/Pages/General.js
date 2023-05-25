@@ -1,3 +1,4 @@
+//Area for the page of general posts. 
 import { useEffect, useState } from "react";
 import CreatePost from "../Components/Createpost";
 import Postcard from "../Components/Postcard";

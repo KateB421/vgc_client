@@ -1,3 +1,4 @@
+// component for adding a post to a game.
 import { useState } from "react";
 
 export default function CreatePost({onNewPost}){

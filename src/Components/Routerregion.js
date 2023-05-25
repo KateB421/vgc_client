@@ -1,3 +1,4 @@
+//Handling the routes. 
 import {Routes, Route} from 'react-router-dom';
 import GamesArea from '../Pages/Games';
 import General from '../Pages/General';

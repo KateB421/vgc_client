@@ -1,70 +1,124 @@
-# Getting Started with Create React App
+# VideoGame Clubs
+## Create Groups to Play and Discuss Video Games Together
+Throughout history, new forms of media consistantly go through a cycle of disapproval and criticism before being taken seriously as an art form. Theater, the novel, radio, and film have all gone through this cycle. As video games and the analysis of them become more popular, I felt something was missing. I thought of book clubs and the concept of having a structured setting for people to come together and consume and discuss media. My website, VideoGame Clubs offers a space to create and find this kind of setting.
+## Features
+- User Log In, Sign Up, and Log Out
+- User Profiles with Bio and Intrests
+- Browse and Add Video Games
+- Browse and Make Posts for Specific Games or General topics.
+- Custom Styled Components
+- Bcrypt Encoding
+## Live Site
+Check Out VideoGame Clubs [here!](https://videogameclub.onrender.com/)
+## Technical Framework Usage: PERN Stack
+- PostgreSQL
+- Express
+- React
+- Node.js
+## Goals
+- Browse, Create, and Join Public and Private Groups
+- Comment on and React to Posts
+- Support for Uploading Images (profile picture, game cover, post images).
+- Add More to Home Page and Update Styling
+## Challenges
+- Completing Project from Conception to Deployment by Myself in One Week.
+- Prioritizing Features Based on Short Time Frame.
+- Coordinating Multiple Calls to Database on One Page.
+## Triumphs
+- Creating thorough API for Database
+- Applied Knowledge and Skills From DigitalCrafts Web Development Course.
+- Researched React Techniques Not Covered in Class.
+## Project Credit Goes To:
+- [Kate Burton](https://github.com/KateB421)
+## Code Examples
+### Sign Up Component:
+    async function onSignup(item){
+        let res = await fetch(`${process.env.REACT_APP_SERVER_URL}/api/users/add`,{
+            method:'POST',
+            mode:'cors',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body:JSON.stringify(item)
+        });
+        res=await res.json();
+    }
+    function onFormSubmit(event){
+        event.preventDefault();
+        onSignup(state);
+        dispatch({
+            type:RESET_STATE
+        })
+    }
+    return(
+        <div className="signUp">
+            <form autoComplete="off" onSubmit={onFormSubmit}>
+                <label htmlFor='newUsername'>Username*</label>
+                <input value={state.username} id="newUsername" type={'text'} onChange={onUsernameChange}/>
+                <label htmlFor='createPassword'>Password*</label>
+                <input value={state.password} onChange={onPasswordChange} id="createPassword" type={'password'}/>
+                <label htmlFor='signUpEmail'>Email*</label>
+                <input value={state.email} onChange={onEmailChange} id="signUpEmail" type={'email'}/>
+                <label htmlFor='signUpBio'>Bio</label>
+                <input value={state.bio} onChange={onBioChange} id="signUpBio" type={'text'}/>
+                <label htmlFor='signUpInterests'>Video Game Interests</label>
+                <input value={state.interests} onChange={onInterestsChange} id="signUpInterests" type={'text'}/>
+                <button>Sign Up</button>
+                <button onClick={onClearClick}>Clear</button>
+            </form>
+            <p>*Required</p>
+            <Link to={'/login'}>Already have an account? Log in here.</Link>
+        </div>
+    )
+### Style CSS Sign Up Component:
+    .signUp{
+        background-color: #995fa3;
+        color: white;
+        padding: 4% 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10% 40%;
+        border-radius: 12px;
+        
+    }
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+    .signUp a{
+        color: white;
+        text-decoration: none;
+    }
 
-## Available Scripts
+    .signUp a:visited{
+        color: white;
+        text-decoration: none;
+    }
 
-In the project directory, you can run:
+    .signUp a:hover{
+        text-decoration: underline;
+    }
 
-### `npm start`
+    .signUp label{
+        margin: 2px;
+        font-size:x-large;
+    }
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    .signUp input{
+        margin-bottom: 8px;
+    }
+    .signUp form{
+        margin-top: 12px;
+        margin-bottom: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    .signUp button{
+        margin-top: 4px;
+        margin-bottom: 4px;
+        width: fit-content;
+        font-size: large;
+    }
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# The End.

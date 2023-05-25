@@ -1,3 +1,4 @@
+//This area is for the login page.
 import { Link } from "react-router-dom";
 import { useReducer } from "react";
 import { Navigate } from "react-router-dom";
@@ -51,6 +52,7 @@ export default function Login({userLoggedIn, onLogin}){
     }
     function onFormSubmit(event){
         event.preventDefault();
+        //The onLogin function is handled in App.js so user info can be passed down to wherever is needed.
         onLogin(state)
         dispatch({
             type:RESET_STATE

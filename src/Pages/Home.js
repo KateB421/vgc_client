@@ -1,3 +1,4 @@
+//Area for the home page.
 import './Home.css'
 
 export default function Home({userLoggedIn, user}){

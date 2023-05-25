@@ -1,3 +1,4 @@
+//Component for adding a new game. 
 import { useReducer } from "react"
 
 const CHANGE_TITLE='Changing_Title';
